@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Live Video Feed</title>
     <style>
-      body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-      video { width: 80%; height: auto; }
+      
     </style>
   </head>
   <body>
+    <div>
+      <form>
+        <div>
+          <label for="username">Username: </label>
+          <input type="text" id="username" name="username">
+        </div>
+        <div>
+          <label for="pass">Password: </label>
+          <input type="password" id="pass" name="password">
+        </div>
+        <button type="submit">Log-in</button>
+      </form>
+    </div>
     <video id="video" playsinline autoplay></video>
     <p id="errorMsg"></p>
-    <script src="/main.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>

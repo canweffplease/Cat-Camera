@@ -1,4 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+import './style.css'
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const form = document.querySelector('form');
+
+  var username;
+  var password;
+  
   const video = document.getElementById('video');
   const errorMsgElement = document.getElementById('errorMsg');
 
@@ -17,5 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
       errorMsgElement.textContent = `Error accessing the media devices: ${e.toString()}`;
     }
   }
-  init();
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    username = document.getElementById('username').value;
+    password = document.getElementById('pass').value;
+    
+    if (username === 'admin' && password==='admin'){
+      video.style.display = 'block';
+      form.style.display = 'none';
+      init();
+    }
+  });
 });
